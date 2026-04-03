@@ -1,0 +1,4 @@
+*.wbproj
+*.cache
+*.log
+*.tmp
