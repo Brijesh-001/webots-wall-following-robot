@@ -4,12 +4,14 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/project
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/apartment_structure/protos/Wall.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/Parquetry.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/Roughcast.proto"
 
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.01056863422414263 -0.99980238559181 0.016837272212620876 5.162208215843654
-  position -2.779472490927004 0.647894017965249 5.184309473688319
+  orientation -0.11274166955505198 -0.9305177697699057 0.34846233094608686 5.61396273407211
+  position -6.030916784253349 1.003588978780573 4.736477163487448
 }
 TexturedBackground {
 }
@@ -17,14 +19,17 @@ TexturedBackgroundLight {
 }
 RectangleArena {
   floorSize 2 2
+  floorAppearance Parquetry {
+    type "dark strip"
+  }
 }
 Robot {
-  translation -0.9191648241903198 -0.923902129751159 -0.00010362796452289755
-  rotation 0.00025757283664576164 0.00023059986881033548 0.9999999402399654 -0.779053129842807
+  translation -0.07391588719115158 0.01747217740021016 -7.660382946418111e-05
+  rotation -0.0003481198059416708 -0.0002010619149628541 0.9999999191933503 2.423728288848191
   children [
     HingeJoint {
       jointParameters HingeJointParameters {
-        position 579.8761213283993
+        position 1835.387278217832
         axis 0 1 0
         anchor 0 0 0.02
       }
@@ -40,8 +45,8 @@ Robot {
         }
       ]
       endPoint DEF EPUCK_LEFT_WHEEL Solid {
-        translation 0 0.02600000000000001 0.02
-        rotation 0 1 0 1.8230730678773799
+        translation 0 0.026 0.02
+        rotation 0 0.9999999999999999 0 0.6971685213928391
         children [
           DEF EPUCK_WHEEL Pose {
             rotation 1 0 0 -1.570796
@@ -173,13 +178,13 @@ Robot {
           density -1
           mass 0.005
         }
-        linearVelocity -0.04092793712543484 0.04629637761185622 2.051391851100292e-06
-        angularVelocity -2.2980623981480117 -2.1246004992749943 2.3928814071558717
+        linearVelocity -0.046606312931268254 0.039691537163167444 9.995874705740237e-09
+        angularVelocity -2.035237477949408 -2.3912461356675276 -0.676789863164364
       }
     }
     HingeJoint {
       jointParameters HingeJointParameters {
-        position 984.9165174725749
+        position 2212.3456124437616
         axis 0 1 0
         anchor 0 0 0.02
       }
@@ -195,8 +200,8 @@ Robot {
         }
       ]
       endPoint DEF EPUCK_RIGHT_WHEEL Solid {
-        translation 0 -0.02600000000000004 0.02
-        rotation 0 0.9999999999999999 0 4.7396095525594335
+        translation 0 -0.026000000000000082 0.02
+        rotation 0 1 0 0.664384316547198
         children [
           Pose {
             rotation 1 0 0 3.14159
@@ -208,8 +213,8 @@ Robot {
         name "right wheel"
         boundingObject USE EPUCK_WHEEL_BOUNDING_OBJECT
         physics USE EPUCK_WHEEL_PHYSICS
-        linearVelocity 0.04182664727753944 -0.0443630148399708 -2.9243021768638433e-07
-        angularVelocity 2.318823459713912 2.1363786449018307 2.3884932120792555
+        linearVelocity -0.02039524251382972 0.01734888914561703 -8.918569704981294e-09
+        angularVelocity -0.8157548784921455 -0.9551115416816022 -0.6649305149249213
       }
     }
     DEF BATTERY_CONNECTOR Pose {
@@ -1599,83 +1604,161 @@ Robot {
   controller "followWall"
   cpuConsumption 1.11
   remoteControl "e-puck_bluetooth"
-  linearVelocity 0.0004174607318804918 0.0009808742524874746 -0.00020366174581261124
-  angularVelocity 0.008871451645325157 0.007615879435735905 2.357754847805189
+  linearVelocity -0.033490655671971584 0.028529008466652992 -9.436245428574046e-09
+  angularVelocity 2.837279491305533e-07 2.606547857030468e-07 -0.6616322338632841
 }
 Wall {
   translation -0.35 -0.29 3.42581e-06
   rotation 0 1 0 4.692820414042842e-06
   size 0.01 1 0.1
+  appearance Roughcast {
+    colorOverride 1 0.3 0.3
+    textureTransform TextureTransform {
+      scale 2.4 1
+    }
+  }
 }
 Wall {
   translation 0.74 -0.33 0.00999825
   rotation 2.3464099999870814e-06 2.3464099999870814e-06 0.9999999999944944 1.5708
   name "wall(1)"
   size 0.01 0.5 0.1
+  appearance Roughcast {
+    colorOverride 0 0 0
+    textureTransform TextureTransform {
+      scale 2.4 1
+    }
+  }
 }
 Wall {
   translation -0.507515 -0.499187 4.16501e-06
   rotation 2.3464099999870814e-06 2.3464099999870814e-06 0.9999999999944944 1.5708
   name "wall(2)"
   size 0.01 1 0.1
+  appearance Roughcast {
+    colorOverride 0 0 0
+    textureTransform TextureTransform {
+      scale 2.4 1
+    }
+  }
 }
 Wall {
   translation 0.55 0.91 -7.97776e-07
   rotation 0 1 0 4.692820414042842e-06
   name "wall(3)"
   size 0.01 0.2 0.1
+  appearance Roughcast {
+    colorOverride 0 0 0
+    textureTransform TextureTransform {
+      scale 2.4 1
+    }
+  }
 }
 Wall {
   translation 0.38 0.25 8.70517e-12
   rotation 2.3464099999870814e-06 2.3464099999870814e-06 0.9999999999944944 1.5708
   name "wall(4)"
   size 0.01 1 0.1
+  appearance Roughcast {
+    colorOverride 0 0 0
+    textureTransform TextureTransform {
+      scale 2.4 1
+    }
+  }
 }
 Wall {
   translation 0.73 -0.8 -1.6425e-06
   rotation 0 1 0 4.692820414042842e-06
   name "wall(5)"
   size 0.01 0.4 0.1
+  appearance Roughcast {
+    colorOverride 1 0.3 0.3
+    textureTransform TextureTransform {
+      scale 2.4 1
+    }
+  }
 }
 Wall {
   translation 0.09 -0.85 1.36093e-06
   rotation 0 1 0 4.692820414042842e-06
   name "wall(6)"
   size 0.01 0.3 0.1
+  appearance Roughcast {
+    colorOverride 0 0 0
+    textureTransform TextureTransform {
+      scale 2.4 1
+    }
+  }
 }
 Wall {
   translation 0.28 0.23 4.69257e-07
   rotation 0 1 0 4.692820414042842e-06
   name "wall(7)"
   size 0.01 1 0.1
+  appearance Roughcast {
+    colorOverride 1 0.3 0.3
+    textureTransform TextureTransform {
+      scale 2.4 1
+    }
+  }
 }
 Wall {
   translation -0.07 0.73 2.11181e-06
   rotation 2.3464099999870814e-06 -2.3464099999870814e-06 0.9999999999944944 -1.5707953071795862
   name "wall(8)"
   size 0.01 0.7 0.1
+  appearance Roughcast {
+    colorOverride 0 0 0
+    textureTransform TextureTransform {
+      scale 2.4 1
+    }
+  }
 }
 Wall {
   translation -0.67 0.14 4.92757e-06
   rotation 0 1 0 4.692820414042842e-06
   name "wall(9)"
   size 0.01 0.6 0.1
+  appearance Roughcast {
+    colorOverride 1 0.3 0.3
+    textureTransform TextureTransform {
+      scale 2.4 1
+    }
+  }
 }
 Wall {
   translation -0.42 0.59 3.75428e-06
   rotation 0 1 0 4.692820414042842e-06
   name "wall(10)"
   size 0.01 0.3 0.1
+  appearance Roughcast {
+    colorOverride 1 0.3 0.3
+    textureTransform TextureTransform {
+      scale 2.4 1
+    }
+  }
 }
 Wall {
   translation -0.6 0.44 4.5991e-06
   rotation 2.3464099999870814e-06 -2.3464099999870814e-06 0.9999999999944944 -1.5707953071795862
   name "wall(11)"
   size 0.01 0.8 0.1
+  appearance Roughcast {
+    colorOverride 0 0 0
+    textureTransform TextureTransform {
+      scale 2.4 1
+    }
+  }
 }
 Wall {
   translation -0.75 0.81 5.30305e-06
   rotation 0 1 0 4.692820414042842e-06
   name "wall(12)"
   size 0.01 0.4 0.1
+  appearance Roughcast {
+    colorOverride 1 0.3 0.3
+    textureTransform TextureTransform {
+      scale 2.4 1
+    }
+  }
 }
